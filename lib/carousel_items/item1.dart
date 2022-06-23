@@ -1,17 +1,22 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:nikah/constants/constants.dart';
 
 class Item1 extends StatelessWidget {
+  void ItemContent() {
+    List<String> feature = [
+      'Get 25 verified contact members',
+      'Instant Chat & Messages',
+      'Photo lock options',
+      'Get highlighted to matches'
+    ];
+  }
+
   const Item1({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 300.0,
-      width: 170.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-      ),
+    return SizedBox(
       child: Column(
         children: [
           Column(
@@ -26,7 +31,7 @@ class Item1 extends StatelessWidget {
                   Text(
                     "Royal ",
                     style: TextStyle(
-                      fontSize: 12.0,
+                      fontSize: 14.0,
                       fontFamily: 'NunitoSans',
                       fontWeight: FontWeight.w800,
                     ),
@@ -35,7 +40,7 @@ class Item1 extends StatelessWidget {
                     "2 Months",
                     style: TextStyle(
                       color: Colors.grey,
-                      fontSize: 11.0,
+                      fontSize: 12.0,
                       fontFamily: 'NunitoSans',
                       fontWeight: FontWeight.normal,
                     ),
@@ -57,7 +62,7 @@ class Item1 extends StatelessWidget {
               Text(
                 'Rs. 2080',
                 style: TextStyle(
-                  color: Color(0xffD4A5FF),
+                  color: primaryColor1,
                   fontSize: 26.0,
                   fontFamily: 'Nunito',
                   fontWeight: FontWeight.bold,
@@ -141,13 +146,24 @@ class Item1 extends StatelessWidget {
                     )
                   ],
                 ),
-                Text(
-                  'Priority over free members',
-                  style: TextStyle(
-                      decoration: TextDecoration.lineThrough,
-                      color: Color(0xffB1B1B3),
-                      fontSize: 12.0,
-                      fontFamily: 'NunitoSans'),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.check,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 8.0,
+                    ),
+                    Text(
+                      'Priority over free members',
+                      style: TextStyle(
+                          decoration: TextDecoration.lineThrough,
+                          color: Color(0xffB1B1B3),
+                          fontSize: 12.0,
+                          fontFamily: 'NunitoSans'),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 15.0,
@@ -163,7 +179,7 @@ class Item1 extends StatelessWidget {
                         color: Color.fromRGBO(0, 0, 0, 0.25),
                       )
                     ],
-                    color: Color(0xffD4A5FF),
+                    color: primaryColor1,
                   ),
                   child: Center(
                     child: GestureDetector(
@@ -183,7 +199,7 @@ class Item1 extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

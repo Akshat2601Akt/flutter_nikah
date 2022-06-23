@@ -1,7 +1,5 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../widgets/continue_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -13,143 +11,172 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 15.0),
+            padding: EdgeInsets.only(top: screenHeight * 0.019),
             child: Column(
               children: [
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.arrow_back, color: Colors.black),
+                      icon: const Icon(Icons.arrow_back, color: Colors.black),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pop(context);
                       },
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 280.0,
-                  width: 300.0,
+                  height: screenHeight * 0.35,
+                  width: screenWidth * 0.76,
                   child: Image.asset('images/Couple-pana 1.png'),
                 ),
                 SizedBox(
-                  height: 10.0,
+                  height: screenHeight * 0.012,
                 ),
                 Column(
                   children: [
                     Text(
                       'Find Your',
                       style: TextStyle(
-                        fontFamily: 'Nunito',
-                        fontSize: 30,
+                        fontFamily: 'NunitoExtraBold',
+                        fontSize: screenHeight * 0.038,
                       ),
                     ),
                     Text(
                       'Best Partner',
                       style: TextStyle(
-                        fontFamily: 'Nunito',
-                        fontSize: 30,
+                        fontFamily: 'NunitoExtraBold',
+                        fontSize: screenHeight * 0.038,
                       ),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 15.0,
+                  height: screenHeight * 0.019,
                 ),
-                Text(
-                  'Login or signup',
-                  style: TextStyle(
-                    fontFamily: 'NunitoSans',
-                    fontSize: 12.0,
-                    color: Color(0xff64748B),
-                  ),
+                Row(
+                  children: [
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
+                      width: screenWidth * 0.38,
+                      child: Divider(
+                        color: Colors.grey[300],
+                        thickness: 1.0,
+                      ),
+                    ),
+                    Text(
+                      'Login or Sign-Up',
+                      style: TextStyle(
+                        fontFamily: 'NunitoSans',
+                        fontSize: screenHeight * 0.015,
+                        color: Color.fromRGBO(100, 116, 139, 0.8),
+                      ),
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
+                      width: screenWidth * 0.375,
+                      child: Divider(
+                        color: Colors.grey[300],
+                        thickness: 1.0,
+                      ),
+                    )
+                  ],
                 ),
                 SizedBox(
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: TextField(
                       decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.04,
+                            vertical: screenHeight * 0.015),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(35)),
                         hintText: 'Enter Mobile Number',
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 55.0,
-                  width: 355.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(35),
-                    color: Color(0xffD4A5FF),
-                  ),
-                  child: Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/third');
-                      },
-                      child: Text(
-                        'Continue',
-                        style: TextStyle(
+                        hintStyle: TextStyle(
+                          color: Color(0xff94A3B8),
                           fontFamily: 'Nunito',
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w600,
+                          fontSize: screenHeight * 0.02,
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  'OR',
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: Color(0xff64748B),
-                  ),
+                ContinueButton(
+                  onPress: () {
+                    Navigator.pushNamed(context, '/third');
+                  },
                 ),
                 SizedBox(
+                  height: screenHeight * 0.025,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
+                      width: screenWidth * 0.475,
+                      child: Divider(
+                        color: Colors.grey[300],
+                        thickness: 1.0,
+                      ),
+                    ),
+                    const Text(
+                      'OR',
+                      style: TextStyle(
+                        fontFamily: 'NunitoSans',
+                        fontSize: 12.0,
+                        color: Color.fromRGBO(100, 116, 139, 0.8),
+                      ),
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
+                      width: screenWidth * 0.47,
+                      child: Divider(
+                        color: Colors.grey[300],
+                        thickness: 1.0,
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(
                   height: 10.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset('images/Group 6.png'),
-                    SizedBox(
+                    const SizedBox(
                       width: 35.0,
                     ),
                     Image.asset('images/Group 5.png'),
-                    SizedBox(
+                    const SizedBox(
                       width: 35.0,
                     ),
                     Image.asset('images/Group 4.png'),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                  child: Column(
-                    children: [
-                      Text(
-                        'By continuing, you are about to agree to the terms and',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Color(0xff64748B),
-                        ),
+                const Flexible(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Text(
+                      'By continuing, you are about to agree to the terms and conditions, privacy policy',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Color(0xff64748B),
                       ),
-                      Text(
-                        'conditions, privacy policy',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Color(0xff64748B),
-                        ),
-                      )
-                    ],
+                    ),
                   ),
                 ),
               ],

@@ -1,7 +1,5 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nikah/constants/constants.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -13,92 +11,92 @@ class LandingScreen extends StatefulWidget {
 class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 88.0),
+            padding: EdgeInsets.only(top: screenHeight * 0.11),
             child: Column(
               children: [
-                Container(
-                  height: 275.36,
-                  width: 200.0,
-                  child: Image.asset('images/image 1.png'),
-                ),
+                Image.asset('images/image 1.png',
+                    height: screenHeight * 0.35, width: screenWidth * 0.5),
                 SizedBox(
-                  height: 58.64,
+                  height: screenHeight * 0.075,
                 ),
                 Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text(
                           'Find Your ',
                           style: TextStyle(
-                            fontFamily: 'Nunito',
+                            fontFamily: 'NunitoExtraBold',
                             fontSize: 30,
                           ),
                         ),
                         Text(
                           'Partner',
                           style: TextStyle(
-                            fontFamily: 'Nunito',
+                            fontFamily: 'NunitoExtraBold',
                             fontSize: 30,
-                            color: Color(0xffD4A5FF),
+                            color: primaryColor1,
                           ),
                         ),
                       ],
                     ),
-                    Text(
+                    const Text(
                       'With Us',
                       style: TextStyle(
-                        fontFamily: 'Nunito',
+                        fontFamily: 'NunitoExtraBold',
                         fontSize: 30,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30.0,
                 ),
-                Text(
+                const Text(
                   'Join us and socialize with',
                   style: TextStyle(
                     fontFamily: 'NunitoSans',
                     fontSize: 14.0,
                   ),
                 ),
-                Text(
+                const Text(
                   'millions of people',
                   style: TextStyle(
                     fontFamily: 'NunitoSans',
                     fontSize: 14.0,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 43.0,
                 ),
                 Container(
-                  height: 55.0,
-                  width: 182.0,
+                  height: screenHeight * 0.07,
+                  width: screenWidth * 0.46,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(35),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 10.0,
                         color: Color.fromRGBO(0, 0, 0, 0.25),
                       )
                     ],
-                    color: Color(0xffD4A5FF),
+                    color: primaryColor1,
                   ),
                   child: Center(
                     child: GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(context, '/second');
                       },
-                      child: Text(
+                      child: const Text(
                         'Continue',
                         style: TextStyle(
                           fontFamily: 'Nunito',
@@ -109,7 +107,7 @@ class _LandingScreenState extends State<LandingScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30.0,
                 ),
                 Row(
@@ -119,27 +117,27 @@ class _LandingScreenState extends State<LandingScreen> {
                       height: 8.0,
                       width: 24.0,
                       decoration: BoxDecoration(
-                          color: Color(0xffD4A5FF),
+                          color: primaryColor1,
                           borderRadius: BorderRadius.circular(10.0)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 7.0,
                     ),
                     Container(
                       height: 8.0,
                       width: 8.0,
                       decoration: BoxDecoration(
-                          color: Color(0xffE5E5E5),
+                          color: const Color(0xffE5E5E5),
                           borderRadius: BorderRadius.circular(10.0)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 7.0,
                     ),
                     Container(
                       height: 8.0,
                       width: 8.0,
                       decoration: BoxDecoration(
-                          color: Color(0xffE5E5E5),
+                          color: const Color(0xffE5E5E5),
                           borderRadius: BorderRadius.circular(10.0)),
                     )
                   ],

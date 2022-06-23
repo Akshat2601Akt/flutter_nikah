@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../constants/constants.dart';
+
 class Item2 extends StatelessWidget {
   const Item2({Key? key}) : super(key: key);
   @override
@@ -26,7 +28,7 @@ class Item2 extends StatelessWidget {
                   Text(
                     "Luxury ",
                     style: TextStyle(
-                      fontSize: 12.0,
+                      fontSize: 14.0,
                       fontFamily: 'NunitoSans',
                       fontWeight: FontWeight.w800,
                     ),
@@ -35,7 +37,7 @@ class Item2 extends StatelessWidget {
                     "6 Months",
                     style: TextStyle(
                       color: Colors.grey,
-                      fontSize: 11.0,
+                      fontSize: 12.0,
                       fontFamily: 'NunitoSans',
                       fontWeight: FontWeight.normal,
                     ),
@@ -57,7 +59,7 @@ class Item2 extends StatelessWidget {
               Text(
                 'Rs. 5050',
                 style: TextStyle(
-                  color: Color(0xffD4A5FF),
+                  color: primaryColor1,
                   fontSize: 26.0,
                   fontFamily: 'Nunito',
                   fontWeight: FontWeight.bold,
@@ -141,13 +143,24 @@ class Item2 extends StatelessWidget {
                     )
                   ],
                 ),
-                Text(
-                  'Priority over free members',
-                  style: TextStyle(
-                      decoration: TextDecoration.lineThrough,
-                      color: Color(0xffB1B1B3),
-                      fontSize: 12.0,
-                      fontFamily: 'NunitoSans'),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.check,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 8.0,
+                    ),
+                    Text(
+                      'Priority over free members',
+                      style: TextStyle(
+                          decoration: TextDecoration.lineThrough,
+                          color: Color(0xffB1B1B3),
+                          fontSize: 12.0,
+                          fontFamily: 'NunitoSans'),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 15.0,
@@ -163,7 +176,7 @@ class Item2 extends StatelessWidget {
                         color: Color.fromRGBO(0, 0, 0, 0.25),
                       )
                     ],
-                    color: Color(0xffD4A5FF),
+                    color: primaryColor1,
                   ),
                   child: Center(
                     child: GestureDetector(
